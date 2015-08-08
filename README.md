@@ -223,106 +223,106 @@ This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7ste
   197.  groupadd cloudera
   198.  useradd -g cloudera christoph
   199.  passwd christoph
-  200  useradd -g cloudera ashok
-  201  passwd ashok
-  202  mysql -uroot -p
-  203  exit
-  204  vi /etc/my.cnf 
-  205  clear
-  206  top
-  207  wget https://github.com/mfernest/SEBC/blob/master/yarn/YARNtest.sh
-  208  ll
-  209  vi YARNtest.sh
-  210  chmod +x YARNtest.sh 
-  211  ll
-  212  vi YARNtest.sh 
-  213  ./YARNtest.sh 
-  214  vi YARNtest.sh 
-  215  echo $HADOOP_PATH
-  216  more YARNtest.sh 
-  217  vi YARNtest.sh 
-  218  ./YARNtest.sh 
-  219  vi YARNtest.sh 
-  220  ./YARNtest.sh 
-  221  vi YARNtest.sh 
-  222  ./YARNtest.sh 
-  223  vi YARNtest.sh 
-  224  ./YARNtest.sh 
-  225  ls =/opt/cloudera/parcels/CDH/lib/
-  226  ls /opt/cloudera/parcels/CDH/lib/
-  227  vi YARNtest.sh 
-  228  su christoph
-  229  ll
-  230  cp YARNtest.sh /home/christoph/
-  231  su
-  232  su - christoph
-  233  chown christoph:cloudera /home/christoph/YARNtest.sh 
-  234  ll /home/christoph/
-  235  su - christoph
-  236  ll
-  237  rm *.err
-  238  rm -f *.err
-  239  rm-f *.out
-  240  ll
-  241  rm -f *.out
-  242  ll
-  243  exit
-  244  ll
-  245  vi YARNtest.sh 
-  246  ./YARNtest.sh 
-  247  ll
-  248  rm YARNtest.sh 
-  249  su - christoph
-  250  find / -name us_export_policy.jar
-  251  find / -name local_policy.jar
-  252  jar -tvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
-  253  tar -tvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
-  254  which jar
-  255  yum install jdk
-  256  hwich jar
-  257  which jar
-  258  find / -name jar
-  259  /usr/java/jdk1.6.0_31/bin/jar
-  260  /usr/java/jdk1.6.0_31/bin/jar -tvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
-  261  ll
-  262  mkdir security_policy
-  263  cd security_policy/
-  264  /usr/java/jdk1.6.0_31/bin/jar -xvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
-  265  ll
-  266  ll META-INF/
-  267  more META-INF/MANIFEST.MF 
-  268  ll
-  269  more default_local.policy 
-  270  ll
-  271  cd META-INF/
-  272  ll
-  273  more JCE_RSA.RSA 
-  274  ll
-  275  more JCE_RSA.SF 
-  276  cd
-  277  ll
-  278  cd security_policy/
-  279  ll
-  280  nmap -sT -O localhost
-  281  /sbin/nmap
-  282  yum install nmap
-  283  which nmap
-  284  nmap -sT -O localhost
-  285  nmap -sT -O http://wertz-sebc-5.vpc.cloudera.com/
-  286  nmap -sT -O wertz-sebc-5.vpc.cloudera.com
-  287  ll
-  288  wget http://web.mit.edu/kerberos/dist/krb5/1.13/krb5-1.13.2-signed.tar
-  289  wget http://web.mit.edu/kerberos/dist/krb5-appl/1.0/krb5-appl-1.0.3-signed.tar
-  290  ll
-  291  tar -tvf krb5-1.13.2-signed.tar 
-  292  tar -xvf krb5-1.13.2-signed.tar
-  293  ll
-  294  more krb5-1.13.2.tar.gz.asc 
-  295  ll
-  296  tar -xzf krb5-1.13.2.tar.gz
-  297  ll
-  298  tar -xvf krb5-appl-1.0.3-signed.tar 
-  299  mroe krb5-appl-1.0.3.tar.gz.asc 
+  200.  useradd -g cloudera ashok
+  201.  passwd ashok
+  202.  mysql -uroot -p
+  203.  exit
+  204.  vi /etc/my.cnf 
+  205.  clear
+  206.  top
+  207.  wget https://github.com/mfernest/SEBC/blob/master/yarn/YARNtest.sh
+  208.  ll
+  209.  vi YARNtest.sh
+  210.  chmod +x YARNtest.sh 
+  211.  ll
+  212.  vi YARNtest.sh 
+  213.  ./YARNtest.sh 
+  214.  vi YARNtest.sh 
+  215.  echo $HADOOP_PATH
+  216.  more YARNtest.sh 
+  217.  vi YARNtest.sh 
+  218.  ./YARNtest.sh 
+  219.  vi YARNtest.sh 
+  220.  ./YARNtest.sh 
+  221.  vi YARNtest.sh 
+  222.  ./YARNtest.sh 
+  223.  vi YARNtest.sh 
+  224.  ./YARNtest.sh 
+  225.  ls =/opt/cloudera/parcels/CDH/lib/
+  226.  ls /opt/cloudera/parcels/CDH/lib/
+  227.  vi YARNtest.sh 
+  228.  su christoph
+  229.  ll
+  230.  cp YARNtest.sh /home/christoph/
+  231.  su
+  232.  su - christoph
+  233.  chown christoph:cloudera /home/christoph/YARNtest.sh 
+  234.  ll /home/christoph/
+  235.  su - christoph
+  236.  ll
+  237.  rm *.err
+  238.  rm -f *.err
+  239.  rm-f *.out
+  240.  ll
+  241.  rm -f *.out
+  242.  ll
+  243.  exit
+  244.  ll
+  245.  vi YARNtest.sh 
+  246.  ./YARNtest.sh 
+  247.  ll
+  248.  rm YARNtest.sh 
+  249.  su - christoph
+  250.  find / -name us_export_policy.jar
+  251.  find / -name local_policy.jar
+  252.  jar -tvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
+  253.  tar -tvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
+  254.  which jar
+  255.  yum install jdk
+  256.  hwich jar
+  257.  which jar
+  258.  find / -name jar
+  259.  /usr/java/jdk1.6.0_31/bin/jar
+  260.  /usr/java/jdk1.6.0_31/bin/jar -tvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
+  261.  ll
+  262.  mkdir security_policy
+  263.  cd security_policy/
+  264.  /usr/java/jdk1.6.0_31/bin/jar -xvf /usr/java/jdk1.6.0_31/jre/lib/security/local_policy.jar
+  265.  ll
+  266.  ll META-INF/
+  267.  more META-INF/MANIFEST.MF 
+  268.  ll
+  269.  more default_local.policy 
+  270.  ll
+  271.  cd META-INF/
+  272.  ll
+  273.  more JCE_RSA.RSA 
+  274.  ll
+  275.  more JCE_RSA.SF 
+  276.  cd
+  277.  ll
+  278.  cd security_policy/
+  279.  ll
+  280.  nmap -sT -O localhost
+  281.  /sbin/nmap
+  282.  yum install nmap
+  283.  which nmap
+  284.  nmap -sT -O localhost
+  285.  nmap -sT -O http://wertz-sebc-5.vpc.cloudera.com/
+  286.  nmap -sT -O wertz-sebc-5.vpc.cloudera.com
+  287.  ll
+  288.  wget http://web.mit.edu/kerberos/dist/krb5/1.13/krb5-1.13.2-signed.tar
+  289.  wget http://web.mit.edu/kerberos/dist/krb5-appl/1.0/krb5-appl-1.0.3-signed.tar
+  290.  ll
+  291.  tar -tvf krb5-1.13.2-signed.tar 
+  292.  tar -xvf krb5-1.13.2-signed.tar
+  293.  ll
+  294.  more krb5-1.13.2.tar.gz.asc 
+  295.  ll
+  296.  tar -xzf krb5-1.13.2.tar.gz
+  297.  ll
+  298.  tar -xvf krb5-appl-1.0.3-signed.tar 
+  299.  mroe krb5-appl-1.0.3.tar.gz.asc 
   300  more krb5-appl-1.0.3.tar.gz.asc
   301  tar -xzf krb5-appl-1.0.3.tar.gz
   302  ll
