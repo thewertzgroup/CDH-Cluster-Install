@@ -1,11 +1,9 @@
 # CDH-Cluster-Install
 
-## <center> CM Install Lab
-## <center> <a name="linux_config_lab"/>Linux Configuration Check
+## <center> Cloudera Manager Install
+## <center> <a name="linux_config_check"/>Linux Configuration Check
 
 This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7steps) and is a small sample of an install precheck. 
-
-For this lab, show the commands you used and the output for each step in a screenshot. Make sure the screenshot includes the host that was used. 
 
 1. Check swappiness on all your nodes, then set the recommended value
     * Set the value to 1 for current and future boots
