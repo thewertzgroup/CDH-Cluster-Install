@@ -544,4 +544,5 @@ This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7ste
 518.  kinit
 519.  su - christoph
 520.  history
+
 [root@wertz-sebc-5 ~]# 
