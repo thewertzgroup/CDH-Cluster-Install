@@ -323,225 +323,225 @@ This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7ste
 297.  ll
 298.  tar -xvf krb5-appl-1.0.3-signed.tar 
 299.  mroe krb5-appl-1.0.3.tar.gz.asc 
-300  more krb5-appl-1.0.3.tar.gz.asc
-301  tar -xzf krb5-appl-1.0.3.tar.gz
-302  ll
-303  cd krb5-1.13.2
-304  ll
-305  more README 
-306  ll
-307  cd src/
-308  ll
-309  ./configure 
-310  yum install gcc
-311  ./configure 
-312  make
-313  ;yum install yacc
-314  yum install yacc
-315  yum whatprovides byacc
-316  yum install byacc
-317  which yacc
-318  make
-319  make install
-320  make check
-321  ll
-322  make check -v
-323  make -v check
-324  make check
-325  find / -name uuserver
-326  info uuserver
-327  uuserver -help
-328  yum whatprovides kerberos
-329  yum install kerberos
-330  yum install krb5-server krb5-libs krb5-auth-dialog
-331  more /etc/krb5.conf 
-332  /usr/sbin/kdb5_util create -s
-333  vi /var/kerberos/krb5kdc/kadm5.acl 
-334  /usr/sbin/kadmin.local -q "addprinc admin/admin"
-335  /sbin/service krb5kdc start
-336  /sbin/service kadmin start
-337  /sbin/service krb5kdc status
-338  /sbin/service kadmin status
-339  kinit
-340  kinit admin/admin
-341  tcpdump udp port 88 
-342  ll
-343  kinit admin/admin
-344  more /etc/krb5.conf 
-345  kinit admin
-346  kinit admin@EXAMPLE.COM
-347  /sbin/ifconfig 
-348  vi /etc/hosts
-349  /sbin/service krb5kdc restart
-350  /sbin/service kadmin restart
-351  kinit admin@EXAMPLE.COM
-352  kinit -v admin@EXAMPLE.COM
-353  kinit -help
-354  kinit -V admin@EXAMPLE.COM
-355  ping example.com
-356  more /etc/krb5.conf 
-357  more /var/log/kadmind.log 
-358  more /var/log/krb5kdc.log 
-359  yum install openldap-clients
-360yum install krb5-workstation, krb5-libs
-361yum install krb5-workstation krb5-libs
-362  /usr/sbin/kadmin.local -q "addprinc -pw cloudera cloudera-scm/admin@EXAMPLE.COM"
-363  kinit cloudera-scm/admin@EXAMPLE.COM
-364  kinit -V cloudera-scm/admin@EXAMPLE.COM
-365  kinit
-366  klist
-367  export KRB5_TRACE=/dev/stderr
-368  echo $HADOOP_OPTS
-369  e
-370  export HADOOP_OPTS=-Dsun.security.krb5.debug=true
-371  echo $HADOOP_OPTS
-372  more /etc/krb5.conf 
-373  hostname
-374  vi /etc/krb5.conf 
-375  history | grep service
-376  /sbin/service krb5kdc restart
-377  /sbin/service kadmin restart
-378  kinit -V
-379  kinit scm-admin/admin@EXAMPLE.COM
-380  kinit cloudera-SCM/admin@EXAMPLE.COM
-381  kinit cloudera-scm/admin@EXAMPLE.COM
-382  cat /etc/krb5.conf 
-383  for i in 1 2 3 4; do echo $i; done
-384  for i in 1 2 3 4; do rsync /etc/krb5.conf root@wertz-sebc-$i.vpc.cloudera.com:/etc/krb5.conf; done
-385  klist
-386  cat /etc/krb5.conf 
-387  hostname
-388  more /var/log/krb5kdc.log 
-389  grep vpc.cloudera.com /var/log/krb5kdc.log
-390  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d','
-391  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f1-3
-392  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2
-393  grep vpc.cloudera.com@EXAMPLE.COM /var/log/krb5kdc.log | cut -d',' -f2
-394  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2
-395| grep -v closing
-396  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2 | grep -v closing
-397  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2 | grep -v closing | grep -v etypes
-398  klist
-399  clear
-400  klist
-401  more /tmp/krb5cc_0 
-402  cler
-403  clear
-404  more /tmp/krb5cc_0 
-405  clear
-406  klist
-407  more /tmp/krb5cc_0 
-408  clear && klist
-409  klist -f
-410  ll
-411  ll -a
-412  cd
-413  ll
-414  ls -a
-415  ll -a
-416  pwd
-417  ll
-418  ll -a
-419  kinit
-420  hdfs dfs -ls
-421  hdfs dfs -ls /
-422  su christoph
-423  su hdfs
-424  kadmin
-425  su christoph
-426  kadmin
-427  su hue
-428  whoami
-429  more /var/kerberos/krb5kdc/kdc.conf 
-430  vi /var/kerberos/krb5kdc/kdc.conf
-431  history | grep service
-432  /sbin/service krb5kdc restart
-433  /sbin/service kadmin restart
-434  klist --help
-435  klist hue/wertz-sebc-5.vpc.cloudera.com@EXAMPLE.COM
-436  hdfs dfs -ls
-437  hdfs dfs -ls /
-438  hdfs dfs -ls /user
-439  hdfs dfs -ls /user/christoph
-440  clear
-441  ll
-442  echo foo > foo.txt
-443  ll
-444  hdfs dfs -put foo.txt 
-445  mv foo.txt /home/christoph/
-446  shown christoph:cloudera /home/christoph/foo.txt 
-447  chown christoph:cloudera /home/christoph/foo.txt 
-448  su - christoph
-449  su - hue
-450  pwd
-451  whoami
-452  useradd -g cloudera hue
-453  su hue
-454  whoami
-455  kinit -f -c /tmp/hue_krb5_ccache
-456  klist hue/wertz-sebc-5.vpc.cloudera.com@EXAMPLE.COM
-457  klist
-458  ll /tmp/
-459  ll /tmp/*krb*
-460  klist -k /tmp/hue_krb5_ccache 
-461  klist -A
-462  kadmin
-463  sqlite3 /var/lib/hue/desktop.db
-464  ll
-465  hdfs df -ls /user
-466  hdfs dfs -ls /user
-467  ls /mnt/yarn/nm/usercache/christoph/appcache
-468  ls /mnt/yarn/nm/usercache/christoph/
-469  ls /mnt/yarn
-470  clear
-471  ll /mnt/yarn/nm/usercache/christoph/
-472  more  /var/run/cloudera-scm-agent/process/209-hue-HUE_SERVER
-473  ll /var/run/cloudera-scm-agent/process/209-hue-HUE_SERVER
-474  cd /var/run/cloudera-scm-agent/process/209-hue-HUE_SERVER
-475  ll
-476  more cloudera-monitor.properties 
-477  ll hive-conf/
-478  cd
-479  su christoph
-480  yum install git
-481  su christoph
-482  vi /etc/yum.repos.d/cloudera-cdh5.repo
-483  more /etc/hue/conf/hue.ini 
-484  kadmin.local: modprinc -maxrenewlife 90day krbtgt/EXAMPLE.COM
-485  kadminl.local
-486  kadmin.local
-487  kadmin.local: modprinc -maxrenewlife 90day krbtgt/EXAMPLE.COM
-488  kadmin.local modprinc -maxrenewlife 90day krbtgt/EXAMPLE.COM
-489  kadmin.local
-490  kadmin
-491  more /etc/hue/conf/hue.ini 
-492  clear
-493  mysql -u root -pcloudera
-494  mysql -u amon -pamon_password
-495  mysql -u root -pcloudera
-496  hdfs dfs -ls -R /user/hive
-497  klist
-498  beeline
-499  klist
-500  su christoph
-501  kadmin
-502  history
-503  exit
-504  clear
-505  history | grep mysql-connector
-506  clear
-507  history | grep mysql
-508  mysql -u root -pcloudera
-509  more /etc/host
-510  more /etc/hosts
-511  s
-512  more /etc/hosts
-513  solr
-514  clear
-515  spark-shell
-516  which sbt
-517  hdfs dfs -ls /user
-518  kinit
-519  su - christoph
-520  history
+300.  more krb5-appl-1.0.3.tar.gz.asc
+301.  tar -xzf krb5-appl-1.0.3.tar.gz
+302.  ll
+303.  cd krb5-1.13.2
+304.  ll
+305.  more README 
+306.  ll
+307.  cd src/
+308.  ll
+309.  ./configure 
+310.  yum install gcc
+311.  ./configure 
+312.  make
+313.  ;yum install yacc
+314.  yum install yacc
+315.  yum whatprovides byacc
+316.  yum install byacc
+317.  which yacc
+318.  make
+319.  make install
+320.  make check
+321.  ll
+322.  make check -v
+323.  make -v check
+324.  make check
+325.  find / -name uuserver
+326.  info uuserver
+327.  uuserver -help
+328.  yum whatprovides kerberos
+329.  yum install kerberos
+330.  yum install krb5-server krb5-libs krb5-auth-dialog
+331.  more /etc/krb5.conf 
+332.  /usr/sbin/kdb5_util create -s
+333.  vi /var/kerberos/krb5kdc/kadm5.acl 
+334.  /usr/sbin/kadmin.local -q "addprinc admin/admin"
+335.  /sbin/service krb5kdc start
+336.  /sbin/service kadmin start
+337.  /sbin/service krb5kdc status
+338.  /sbin/service kadmin status
+339.  kinit
+340.  kinit admin/admin
+341.  tcpdump udp port 88 
+342.  ll
+343.  kinit admin/admin
+344.  more /etc/krb5.conf 
+345.  kinit admin
+346.  kinit admin@EXAMPLE.COM
+347.  /sbin/ifconfig 
+348.  vi /etc/hosts
+349.  /sbin/service krb5kdc restart
+350.  /sbin/service kadmin restart
+351.  kinit admin@EXAMPLE.COM
+352.  kinit -v admin@EXAMPLE.COM
+353.  kinit -help
+354.  kinit -V admin@EXAMPLE.COM
+355.  ping example.com
+356.  more /etc/krb5.conf 
+357.  more /var/log/kadmind.log 
+358.  more /var/log/krb5kdc.log 
+359.  yum install openldap-clients
+360.  yum install krb5-workstation, krb5-libs
+361.  yum install krb5-workstation krb5-libs
+362.  /usr/sbin/kadmin.local -q "addprinc -pw cloudera cloudera-scm/admin@EXAMPLE.COM"
+363.  kinit cloudera-scm/admin@EXAMPLE.COM
+364.  kinit -V cloudera-scm/admin@EXAMPLE.COM
+365.  kinit
+366.  klist
+367.  export KRB5_TRACE=/dev/stderr
+368.  echo $HADOOP_OPTS
+369.  e
+370.  export HADOOP_OPTS=-Dsun.security.krb5.debug=true
+371.  echo $HADOOP_OPTS
+372.  more /etc/krb5.conf 
+373.  hostname
+374.  vi /etc/krb5.conf 
+375.  history | grep service
+376.  /sbin/service krb5kdc restart
+377.  /sbin/service kadmin restart
+378.  kinit -V
+379.  kinit scm-admin/admin@EXAMPLE.COM
+380.  kinit cloudera-SCM/admin@EXAMPLE.COM
+381.  kinit cloudera-scm/admin@EXAMPLE.COM
+382.  cat /etc/krb5.conf 
+383.  for i in 1 2 3 4; do echo $i; done
+384.  for i in 1 2 3 4; do rsync /etc/krb5.conf root@wertz-sebc-$i.vpc.cloudera.com:/etc/krb5.conf; done
+385.  klist
+386.  cat /etc/krb5.conf 
+387.  hostname
+388.  more /var/log/krb5kdc.log 
+389.  grep vpc.cloudera.com /var/log/krb5kdc.log
+390.  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d','
+391.  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f1-3
+392.  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2
+393.  grep vpc.cloudera.com@EXAMPLE.COM /var/log/krb5kdc.log | cut -d',' -f2
+394.  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2
+395.| grep -v closing
+396.  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2 | grep -v closing
+397.  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2 | grep -v closing | grep -v etypes
+398.  klist
+399.  clear
+400.  klist
+401.  more /tmp/krb5cc_0 
+402.  cler
+403.  clear
+404.  more /tmp/krb5cc_0 
+405.  clear
+406.  klist
+407.  more /tmp/krb5cc_0 
+408.  clear && klist
+409.  klist -f
+410.  ll
+411.  ll -a
+412.  cd
+413.  ll
+414.  ls -a
+415.  ll -a
+416.  pwd
+417.  ll
+418.  ll -a
+419.  kinit
+420.  hdfs dfs -ls
+421.  hdfs dfs -ls /
+422.  su christoph
+423.  su hdfs
+424.  kadmin
+425.  su christoph
+426.  kadmin
+427.  su hue
+428.  whoami
+429.  more /var/kerberos/krb5kdc/kdc.conf 
+430.  vi /var/kerberos/krb5kdc/kdc.conf
+431.  history | grep service
+432.  /sbin/service krb5kdc restart
+433.  /sbin/service kadmin restart
+434.  klist --help
+435.  klist hue/wertz-sebc-5.vpc.cloudera.com@EXAMPLE.COM
+436.  hdfs dfs -ls
+437.  hdfs dfs -ls /
+438. hdfs dfs -ls /user
+439.  hdfs dfs -ls /user/christoph
+440.  clear
+441.  ll
+442.  echo foo > foo.txt
+443.  ll
+444.  hdfs dfs -put foo.txt 
+445.  mv foo.txt /home/christoph/
+446.  shown christoph:cloudera /home/christoph/foo.txt 
+447.  chown christoph:cloudera /home/christoph/foo.txt 
+448.  su - christoph
+449.  su - hue
+450.  pwd
+451.  whoami
+452.  useradd -g cloudera hue
+453.  su hue
+454.  whoami
+455.  kinit -f -c /tmp/hue_krb5_ccache
+456.  klist hue/wertz-sebc-5.vpc.cloudera.com@EXAMPLE.COM
+457.  klist
+458.  ll /tmp/
+459.  ll /tmp/*krb*
+460.  klist -k /tmp/hue_krb5_ccache 
+461.  klist -A
+462.  kadmin
+463.  sqlite3 /var/lib/hue/desktop.db
+464.  ll
+465.  hdfs df -ls /user
+466.  hdfs dfs -ls /user
+467.  ls /mnt/yarn/nm/usercache/christoph/appcache
+468.  ls /mnt/yarn/nm/usercache/christoph/
+469. ls /mnt/yarn
+470.  clear
+471.  ll /mnt/yarn/nm/usercache/christoph/
+472.  more  /var/run/cloudera-scm-agent/process/209-hue-HUE_SERVER
+473.  ll /var/run/cloudera-scm-agent/process/209-hue-HUE_SERVER
+474.  cd /var/run/cloudera-scm-agent/process/209-hue-HUE_SERVER
+475.  ll
+476.  more cloudera-monitor.properties 
+477.  ll hive-conf/
+478.  cd
+479.  su christoph
+480.  yum install git
+481.  su christoph
+482.  vi /etc/yum.repos.d/cloudera-cdh5.repo
+483.  more /etc/hue/conf/hue.ini 
+484.  kadmin.local: modprinc -maxrenewlife 90day krbtgt/EXAMPLE.COM
+485.  kadminl.local
+486.  kadmin.local
+487.  kadmin.local: modprinc -maxrenewlife 90day krbtgt/EXAMPLE.COM
+488.  kadmin.local modprinc -maxrenewlife 90day krbtgt/EXAMPLE.COM
+489.  kadmin.local
+490.  kadmin
+491.  more /etc/hue/conf/hue.ini 
+492.  clear
+493.  mysql -u root -pcloudera
+494.  mysql -u amon -pamon_password
+495.  mysql -u root -pcloudera
+496.  hdfs dfs -ls -R /user/hive
+497.  klist
+498.  beeline
+499.  klist
+500.  su christoph
+501.  kadmin
+502.  history
+503.  exit
+504.  clear
+505.  history | grep mysql-connector
+506.  clear
+507.  history | grep mysql
+508.  mysql -u root -pcloudera
+509.  more /etc/host
+510.  more /etc/hosts
+511.  s
+512.  more /etc/hosts
+513.  solr
+514.  clear
+515.  spark-shell
+516.  which sbt
+517.  hdfs dfs -ls /user
+518.  kinit
+519.  su - christoph
+520.  history
 [root@wertz-sebc-5 ~]# 
