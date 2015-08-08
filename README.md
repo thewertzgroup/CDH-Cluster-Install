@@ -23,16 +23,16 @@ This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7ste
 
 
 [root@wertz-sebc-5 ~]# history
-    1  lscpu
-    2  cat /proc/sys/vm/swappiness 
-    3  more /etc/sysctl.conf 
-    4  df -h
-    5  clear
-    6  cat /proc/sys/vm/swappiness
-    7  vi /etc/sysctl.conf 
-    8  shutdown -r now
-    9  clear
-   10  cat /proc/sys/vm/swappiness 
+    1.  lscpu
+    2.  cat /proc/sys/vm/swappiness 
+    3.  more /etc/sysctl.conf 
+    4.  df -h
+    5.  clear
+    6.  cat /proc/sys/vm/swappiness
+    7.  vi /etc/sysctl.conf 
+    8.  shutdown -r now
+    9.  clear
+   10.  cat /proc/sys/vm/swappiness 
    11  more /etc/nfsmount.conf 
    12  more /etc/init.d/
    13  cleqr
