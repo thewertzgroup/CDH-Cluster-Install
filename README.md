@@ -6,222 +6,223 @@
 This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7steps) and is a small sample of an install precheck. 
 
 1. Check swappiness on all your nodes, then set the recommended value
-    * Set the value to 1 for current and future boots
+ * Set the value to 1 for current and future boots
 2. Set <code>noatime</code> on DN volumes
-    * For labs, do this on your root volume 
+ * For labs, do this on your root volume 
 3. Set reserve space for root on DN volumes to 0
-    * For labs, do this on your root volume
+ * For labs, do this on your root volume
 4. Check the user resource limits for max file descriptors and processes
 5. Test forward and reverse lookups for both file-based and DNS name services
-    a. Note: <code>/etc/hosts</code>, the [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) must be listed first  
-    b. Note: <code>127.0.0.1</code> **must** resolve to <code>localhost</code>
+ a. Note: <code>/etc/hosts</code>, the [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) must be listed first  
+ b. Note: <code>127.0.0.1</code> **must** resolve to <code>localhost</code>
 6. Enable nscd
-    a. Note: consult documentation before [running nscd with SSSD](http://goo.gl/68HTMQ)
+ a. Note: consult documentation before [running nscd with SSSD](http://goo.gl/68HTMQ)
 
 ---
 <div style="page-break-after: always;"></div>
 
 
 [root@wertz-sebc-5 ~]# history
-    1.  lscpu
-    2.  cat /proc/sys/vm/swappiness 
-    3.  more /etc/sysctl.conf 
-    4.  df -h
-    5.  clear
-    6.  cat /proc/sys/vm/swappiness
-    7.  vi /etc/sysctl.conf 
-    8.  shutdown -r now
-    9.  clear
-   10.  cat /proc/sys/vm/swappiness 
-   11  more /etc/nfsmount.conf 
-   12  more /etc/init.d/
-   13  cleqr
-   14  clear
-   15  more /etc/fstab 
-   16  vi /etc/fstab 
-   17  shutdown -r now
-   18  vi /etc/fstab 
-   19  shutdown -r now
-   20  clear
-   21  cat /proc/mounts 
-   22  clear
-   23  ulimit -a
-   24  clear
-   25  more /etc/hosts
-   26  vi /etc/hosts
-   27  clear
-   28  cat /etc/hosts
-   29  service network restart
-   30  info nscd
-   31  ps -a
-   32  ps -au
-   33  ps -help
-   34  ps -A
-   35  ps -A | grep -i sssd
-   36  more /etc/sssd/
-   37  ll /etc/sssd/
-   38  ll /var/lib/sss/db/
-   39  ls -al /var/lib/sss/db/
-   40  serice sssd status
-   41  service sssd status
-   42  clear
-   43  service sssd status
-   44  service nscd status
-   45  service nscd start
-   46  service nscd status
-   47  clear
-   48  service nscd status
-   49  lscpu 
-   50  yum install mysql-server
-   51  service mysqld stop
-   52  ls /var/lib/mysql/
-   53  ll /var/lib/mysql/
-   54  more /etc/my.cnf 
-   55  clear
-   56  more /etc/my.cnf 
-   57  vi /etc/my.cnf 
-   58  clear
-   59  more /etc/my.cnf 
-   60  service apparmor status
-   61  /sbin/chkconfig mysqld on
-   62  /sbin/chkconfig --list mysqld
-   63  service mysqld start
-   64  service mysqld --log-bin start
-   65  service mysqld start --log-bin
-   66  service mysqld start
-   67  service mysqld stop
-   68  tree /var/lib/m
-   69  tree /var/lib/mysql/
-   70  yum install tree
-   71  tree /var/lib/mysql/
-   72  more /etc/my.cnf 
-   73  which mysql
-   74  mysql --version
-   75  vi /etc/my.cnf 
-   76  service mysqld start
-   77  more /var/log/mysqld.log 
-   78   mysql_upgrade
-   79  yum remove mysql*
-   80  rm -rf /usr/bin/mysql
-   81  rm -rf /var/lib/mysql
-   82  more /etc/my.cnf.rpmsave 
-   83  rm /etc/my.cnf.rpmsave
-   84  ps -e
-   85  ps -e | grep -i mysql
-   86  shutdown -r now
-   87  ll
-   88  yum install mysql
-   89  yum install mysql-server
-   90  wget http://dev.mysql.com/downloads/file.php?id=457911
-   91  ll
-   92  more file.php\?id\=457911 
-   93  ll
-   94  rm file.php\?id\=457911 
-   95  wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz
-   96  ll
-   97  vi /etc/my.cnf 
-   98  more /var/lib/mysql/
-   99  ll /var/lib/mysql/
-  100  mysql_install_db
-  101  /usr/bin/mysql_secure_installation
-  102  /usr/bin/mysqld_safe &
-  103  ps -E
-  104  history | grep ps
-  105  ps -e
-  106  ps -e | grep mysql
-  107  ps -e | grep mysql*
-  108  more /var/log/mysqld.log
-  109  service mysqld start
-  110  cd /usr
-  111  ll
-  112  /usr/bin/mysqld_safe &
-  113  ps -e | grep mysql*
-  114  more /var/log/mysqld.log
-  115  more /etc/my.cnf 
-  116  vi /etc/my.cnf
-  117  cd /var/lib/mysql/
-  118  ll
-  119  ll mysql
-  120  more /var/log/mysqld.log
-  121  chown -R /var/lib/mysql/
-  122  chown -R mysql /var/lib/mysql/
-  123  /usr/bin/mysqld_safe &
-  124  ps -e | grep mysql*
-  125  ll
-  126  pwd
-  127  /usr/bin/mysql_secure_installation
-  128  mysql -u root -pcloudera
-  129  exit
-  130  mysql -u root -pcloudera
-  131  exit
-  132  clear
-  133  history
-  134  exit
-  135  wget http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/cloudera-manager.repo
-  136  mv cloudera-manager.repo /etc/yum.repos.d/
-  137  ll /etc/yum.repos.d/
-  138  java -version
-  139  java
-  140  yum install oracle-j2sdk1.7
-  141  java -version
-  142  which java
-  143  find / -name java
-  144  ll /usr/java/
-  145  ll /usr/share/java
-  146  ll /usr/java/jdk1.7.0_67-cloudera/bin/java
-  147  /usr/java/jdk1.7.0_67-cloudera/bin/java
-  148  /usr/java/jdk1.7.0_67-cloudera/bin/java -version
-  149  yum install cloudera-manager-daemons cloudera-manager-server
-  150  service cloudera-scm-server start
-  151  more /var/log/cloudera-scm-server/cloudera-scm-server.log 
-  152   ll
-  153  tar -xzf mysql-connector-java-5.1.36.tar.gz 
-  154  ll
-  155  ll mysql-connector-java-5.1.36
-  156  yum install mysql-connector-java
-  157  service cloudera-scm-server start
-  158  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
-  159  ll
-  160  find / -name mysql-connector-java *
-  161  find / -name mysql-connector-java*
-  162  find / -name "mysql-connector-java*"
-  163  pwd
-  164  ll /usr/share/java
-  165  yum remove mysql-connector-java
-  166  ll
-  167  ll /usr/share/java/mysql*
-  168  cp mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar /usr/share/java
-  169  ln -s /usr/share/java/mysql-connector-java-5.1.36-bin.jar /usr/share/java/mysql-connector-java.jar 
-  170  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
-  171  service cloudera-scm-server stop
-  172  service cloudera-scm-server start
-  173  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
-  174  /usr/bin/mysql_secure_installation
-  175  which scm_prepare_database.sh 
-  176  ls /usr/share/cmf/schema/scm_prepare_database.sh 
-  177  /usr/share/cmf/schema/scm_prepare_database.sh
-  178  /usr/share/cmf/schema/scm_prepare_database.sh mysql -uroot -pcloudera scm scm scm
-  179  service cloudera-scm-server start
-  180  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
-  181  history
-  182  exit
-  183  mysql -u root -pcloudera
-  184  exit
-  185  mysql -uroot -pcloudera
-  186  find / -name scm-agent
-  187  find / -name *.xml
-  188  find / -name *.xml | grep process
-  189  clear
-  190  history
-  191  exit
-  192  clear
-  193  hdparm -t /dev/xvda1
-  194  more /etc/my.cnf 
-  195  mysql -u root -pcloudera
-  196  hadoop jar hadoop-*examples*.jar teragen 10 /tmp
-  197  groupadd cloudera
-  198  useradd -g cloudera christoph
-  199  passwd christoph
+
+1.  lscpu
+2.  cat /proc/sys/vm/swappiness 
+3.  more /etc/sysctl.conf 
+4.  df -h
+5.  clear
+6.  cat /proc/sys/vm/swappiness
+7.  vi /etc/sysctl.conf 
+8.  shutdown -r now
+9.  clear
+10.  cat /proc/sys/vm/swappiness 
+11.  more /etc/nfsmount.conf 
+12.  more /etc/init.d/
+13.  cleqr
+14.  clear
+15.  more /etc/fstab 
+16.  vi /etc/fstab 
+17.  shutdown -r now
+18.  vi /etc/fstab 
+19.  shutdown -r now
+20.  clear
+21.  cat /proc/mounts 
+22.  clear
+23.  ulimit -a
+24.  clear
+25.  more /etc/hosts
+26.  vi /etc/hosts
+27.  clear
+28.  cat /etc/hosts
+29.  service network restart
+30.  info nscd
+31.  ps -a
+32.  ps -au
+33.  ps -help
+34.  ps -A
+35.  ps -A | grep -i sssd
+36.  more /etc/sssd/
+37.  ll /etc/sssd/
+38.  ll /var/lib/sss/db/
+39.  ls -al /var/lib/sss/db/
+40.  serice sssd status
+41.  service sssd status
+42.  clear
+43.  service sssd status
+44.  service nscd status
+45.  service nscd start
+46.  service nscd status
+47.  clear
+48.  service nscd status
+49.  lscpu 
+50.  yum install mysql-server
+51.  service mysqld stop
+52.  ls /var/lib/mysql/
+53.  ll /var/lib/mysql/
+54.  more /etc/my.cnf 
+55.  clear
+56.  more /etc/my.cnf 
+57.  vi /etc/my.cnf 
+58.  clear
+59.  more /etc/my.cnf 
+60.  service apparmor status
+61.  /sbin/chkconfig mysqld on
+62.  /sbin/chkconfig --list mysqld
+63.  service mysqld start
+64.  service mysqld --log-bin start
+65.  service mysqld start --log-bin
+66.  service mysqld start
+67.  service mysqld stop
+68.  tree /var/lib/m
+69.  tree /var/lib/mysql/
+70.  yum install tree
+71.  tree /var/lib/mysql/
+72.  more /etc/my.cnf 
+73.  which mysql
+74.  mysql --version
+75.  vi /etc/my.cnf 
+76.  service mysqld start
+77.  more /var/log/mysqld.log 
+78.  mysql_upgrade
+79.  yum remove mysql*
+80.  rm -rf /usr/bin/mysql
+81.  rm -rf /var/lib/mysql
+82.  more /etc/my.cnf.rpmsave 
+83.  rm /etc/my.cnf.rpmsave
+84.  ps -e
+85.  ps -e | grep -i mysql
+86.  shutdown -r now
+87.  ll
+88.  yum install mysql
+89.  yum install mysql-server
+90.  wget http://dev.mysql.com/downloads/file.php?id=457911
+91.  ll
+92.  more file.php\?id\=457911 
+93.  ll
+94.  rm file.php\?id\=457911 
+95.  wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz
+96.  ll
+97.  vi /etc/my.cnf 
+98.  more /var/lib/mysql/
+99.  ll /var/lib/mysql/
+  100.  mysql_install_db
+  101.  /usr/bin/mysql_secure_installation
+  102.  /usr/bin/mysqld_safe &
+  103.  ps -E
+  104.  history | grep ps
+  105.  ps -e
+  106.  ps -e | grep mysql
+  107.  ps -e | grep mysql*
+  108.  more /var/log/mysqld.log
+  109.  service mysqld start
+  110.  cd /usr
+  111.  ll
+  112.  /usr/bin/mysqld_safe &
+  113.  ps -e | grep mysql*
+  114.  more /var/log/mysqld.log
+  115.  more /etc/my.cnf 
+  116.  vi /etc/my.cnf
+  117.  cd /var/lib/mysql/
+  118.  ll
+  119.  ll mysql
+  120.  more /var/log/mysqld.log
+  121.  chown -R /var/lib/mysql/
+  122.  chown -R mysql /var/lib/mysql/
+  123.  /usr/bin/mysqld_safe &
+  124.  ps -e | grep mysql*
+  125.  ll
+  126.  pwd
+  127.  /usr/bin/mysql_secure_installation
+  128.  mysql -u root -pcloudera
+  129.  exit
+  130.  mysql -u root -pcloudera
+  131.  exit
+  132.  clear
+  133.  history
+  134.  exit
+  135.  wget http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/cloudera-manager.repo
+  136.  mv cloudera-manager.repo /etc/yum.repos.d/
+  137.  ll /etc/yum.repos.d/
+  138.  java -version
+  139.  java
+  140.  yum install oracle-j2sdk1.7
+  141.  java -version
+  142.  which java
+  143.  find / -name java
+  144.  ll /usr/java/
+  145.  ll /usr/share/java
+  146.  ll /usr/java/jdk1.7.0_67-cloudera/bin/java
+  147.  /usr/java/jdk1.7.0_67-cloudera/bin/java
+  148.  /usr/java/jdk1.7.0_67-cloudera/bin/java -version
+  149.  yum install cloudera-manager-daemons cloudera-manager-server
+  150.  service cloudera-scm-server start
+  151.  more /var/log/cloudera-scm-server/cloudera-scm-server.log 
+  152.  ll
+  153.  tar -xzf mysql-connector-java-5.1.36.tar.gz 
+  154.  ll
+  155.  ll mysql-connector-java-5.1.36
+  156.  yum install mysql-connector-java
+  157.  service cloudera-scm-server start
+  158.  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
+  159.  ll
+  160.  find / -name mysql-connector-java *
+  161.  find / -name mysql-connector-java*
+  162.  find / -name "mysql-connector-java*"
+  163.  pwd
+  164.  ll /usr/share/java
+  165.  yum remove mysql-connector-java
+  166.  ll
+  167.  ll /usr/share/java/mysql*
+  168.  cp mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar /usr/share/java
+  169.  ln -s /usr/share/java/mysql-connector-java-5.1.36-bin.jar /usr/share/java/mysql-connector-java.jar 
+  170.  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
+  171.  service cloudera-scm-server stop
+  172.  service cloudera-scm-server start
+  173.  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
+  174.  /usr/bin/mysql_secure_installation
+  175.  which scm_prepare_database.sh 
+  176.  ls /usr/share/cmf/schema/scm_prepare_database.sh 
+  177.  /usr/share/cmf/schema/scm_prepare_database.sh
+  178.  /usr/share/cmf/schema/scm_prepare_database.sh mysql -uroot -pcloudera scm scm scm
+  179.  service cloudera-scm-server start
+  180.  tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log 
+  181.  history
+  182.  exit
+  183.  mysql -u root -pcloudera
+  184.  exit
+  185.  mysql -uroot -pcloudera
+  186.  find / -name scm-agent
+  187.  find / -name *.xml
+  188.  find / -name *.xml | grep process
+  189.  clear
+  190.  history
+  191.  exit
+  192.  clear
+  193.  hdparm -t /dev/xvda1
+  194.  more /etc/my.cnf 
+  195.  mysql -u root -pcloudera
+  196.  hadoop jar hadoop-*examples*.jar teragen 10 /tmp
+  197.  groupadd cloudera
+  198.  useradd -g cloudera christoph
+  199.  passwd christoph
   200  useradd -g cloudera ashok
   201  passwd ashok
   202  mysql -uroot -p
@@ -382,8 +383,8 @@ This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7ste
   357  more /var/log/kadmind.log 
   358  more /var/log/krb5kdc.log 
   359  yum install openldap-clients
-  360   yum install krb5-workstation, krb5-libs
-  361   yum install krb5-workstation krb5-libs
+  360yum install krb5-workstation, krb5-libs
+  361yum install krb5-workstation krb5-libs
   362  /usr/sbin/kadmin.local -q "addprinc -pw cloudera cloudera-scm/admin@EXAMPLE.COM"
   363  kinit cloudera-scm/admin@EXAMPLE.COM
   364  kinit -V cloudera-scm/admin@EXAMPLE.COM
@@ -417,14 +418,14 @@ This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7ste
   392  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2
   393  grep vpc.cloudera.com@EXAMPLE.COM /var/log/krb5kdc.log | cut -d',' -f2
   394  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2
-  395   | grep -v closing
+  395| grep -v closing
   396  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2 | grep -v closing
   397  grep vpc.cloudera.com /var/log/krb5kdc.log | cut -d',' -f2 | grep -v closing | grep -v etypes
   398  klist
   399  clear
   400  klist
   401  more /tmp/krb5cc_0 
-  402     cler
+  402  cler
   403  clear
   404  more /tmp/krb5cc_0 
   405  clear
