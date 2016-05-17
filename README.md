@@ -19,6 +19,18 @@ This checklist uses a [presentation on Slideshare](http://tiny.cloudera.com/7ste
  a. Note: consult documentation before [running nscd with SSSD](http://goo.gl/68HTMQ)
 
 ---
+
+yarn jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar pi 10 10000
+
+yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen  -D dfs.replication=1 -D mapred.map.tasks=144 1000000000 /user/cloudera/terasort-input
+
+yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar terasort -D mapred.reduce.tasks=4 /user/cloudera/terasort-input /user/cloudera/terasort-output
+
+yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-test.jar TestDFSIO -write -nrFiles 10 -fileSize 1000 -resFile /tmp/TestDFSIO_write_results.txt
+
+yarn jar /opt/cloudera/parcels/CDH-4.7.0-1.cdh4.7.0.p0.40/lib/hadoop-0.20-mapreduce/hadoop-test.jar TestDFSIO -clean
+
+---
 <div style="page-break-after: always;"></div>
 
 
